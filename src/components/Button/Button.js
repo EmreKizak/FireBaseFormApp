@@ -1,15 +1,13 @@
-import {Button, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import styles from './Button.style';
-const Buton = ({text}) => {
+const Buton = ({text, theme = 'primary', onPress}) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.button_container}>
-        <TouchableOpacity>
-          <Text style={styles.title}>{text}</Text>
-        </TouchableOpacity>
+    <TouchableOpacity style={styles[theme].container} onPress={onPress}>
+      <View style={styles[theme].button_container}>
+        <Text style={styles[theme].title}>{text}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
